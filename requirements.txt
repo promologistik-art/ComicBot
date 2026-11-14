@@ -1,0 +1,4 @@
+gradio_client>=1.5,<2
+python-telegram-bot==20.7
+python-dotenv>=1.0,<2
+Pillow>=10,<13

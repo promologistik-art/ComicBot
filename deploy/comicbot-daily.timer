@@ -1,0 +1,11 @@
+[Unit]
+Description=Run ComicBot every day at 09:00 Moscow time
+
+[Timer]
+OnCalendar=*-*-* 09:00:00 Europe/Moscow
+Persistent=true
+RandomizedDelaySec=0
+Unit=comicbot.service
+
+[Install]
+WantedBy=timers.target

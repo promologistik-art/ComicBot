@@ -1,0 +1,10 @@
+[Unit]
+Description=Run the first ComicBot publication 24 hours after setup
+
+[Timer]
+OnActiveSec=24h
+AccuracySec=1s
+Unit=comicbot-initial.service
+
+[Install]
+WantedBy=timers.target

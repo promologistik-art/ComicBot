@@ -1,0 +1,14 @@
+[Unit]
+Description=ComicBot first scheduled publication
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+User=root
+WorkingDirectory=/opt/comicbot
+Environment=COMICBOT_ENV=/root/comicbot.env
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/opt/comicbot/venv/bin/python -m comicbot.runner
+ExecStartPost=/bin/systemctl enable --now comicbot-daily.timer
+TimeoutStartSec=2h

@@ -1,0 +1,13 @@
+[Unit]
+Description=ComicBot daily comic generation and Telegram publishing
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=oneshot
+User=root
+WorkingDirectory=/opt/comicbot
+Environment=COMICBOT_ENV=/root/comicbot.env
+Environment=PYTHONUNBUFFERED=1
+ExecStart=/opt/comicbot/venv/bin/python -m comicbot.runner
+TimeoutStartSec=2h

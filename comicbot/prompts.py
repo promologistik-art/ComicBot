@@ -3,44 +3,70 @@ from __future__ import annotations
 from datetime import date
 
 
-# На старте используем короткие самостоятельные эпизоды одной истории.
-# В каждом выпуске меняем позу, одежду, ракурс и окружение, сохраняя лицо.
+# Первый сезон: короткие самостоятельные трёхпанельные эпизоды
+# одной семейной истории. Постоянная героиня — identity reference.
+# Визуальный стиль: оригинальная чёрно-белая ретро-манга,
+# ручная тушь, выразительная штриховка, три горизонтальные панели.
 EPISODES = [
     {
         "title": "Ящик Пандоры — семейный VPN",
-        "caption": "Семейный VPN. Глава 1: в доме появился загадочный ящик. Никто не помнит, кто его подключил…",
-        "prompt": """Create a polished, humorous cinematic comic illustration for a Russian family-tech comedy.
-The same woman from the reference image is the main heroine. Preserve her recognizable facial identity and natural facial proportions.
-Scene: a cozy modern apartment living room in the evening. The heroine has just discovered a mysterious small elegant black box on a shelf, with a tiny glowing network symbol but absolutely no readable text. She looks at it with curious suspicion, one hand reaching toward it. Show a clear dynamic three-quarter body pose, not a passport portrait.
-Outfit: casual stylish home outfit, soft oversized cream cardigan, dark fitted jeans, simple jewelry.
-Composition: vertical editorial comic panel, expressive storytelling, warm domestic lighting, detailed but uncluttered background. Keep the heroine's face sharp and recognizable. Add no lettering, captions, logos, watermarks, or speech bubbles.""",
+        "caption": "Семейный VPN · Глава 1. В доме появился загадочный ящик. И, кажется, он уже подключён ко всему.",
+        "prompt": """Create one complete original black-and-white retro manga comic page with EXACTLY THREE horizontal panels stacked vertically, read from top to bottom. Hand-inked artwork, expressive clean linework, subtle cross-hatching, charming visual comedy, consistent character design across all panels.
+
+The same woman from the reference image is the recurring heroine in every panel. Preserve her recognizable facial identity, facial proportions, hairstyle and chestnut hair, translating her features naturally into manga ink drawing.
+
+STORY — "The mysterious box":
+Panel 1: In a cozy modern family apartment at evening, the heroine notices a mysterious small black network box on a shelf. She pauses mid-step and looks at it suspiciously.
+Panel 2: Close-up: she leans closer and carefully reaches one finger toward the strange box; a tiny indicator light glows. Her expression changes from curiosity to concern.
+Panel 3: Wider view: several household devices around the room suddenly light up at once. The heroine stands in the middle of the room, startled, holding her hands up in disbelief.
+
+Heroine outfit: soft oversized cream cardigan, dark fitted jeans, simple jewelry. Vary her pose naturally between panels; do not make this a fashion portrait.
+Make the visual sequence clear and funny. Leave speech balloons empty (no letters or pseudo-text), no captions, no logos, no watermark. Keep the three panel borders clearly separated. Entire comic page must be visible in a vertical composition.""",
     },
     {
         "title": "Ящик Пандоры — семейный VPN",
-        "caption": "Семейный VPN. Глава 2: папа решил, что загадочный ящик — это новый пульт от телевизора.",
-        "prompt": """Create a polished, humorous cinematic comic illustration for a Russian family-tech comedy.
-Use the woman in the reference image as the same recurring heroine; preserve her recognizable facial identity.
-Scene: a modern family living room. The heroine stands beside a television while an older man in the background points a remote control at a small mysterious black network box, clearly confusing the two devices. The heroine reacts with amused disbelief. Dynamic natural pose, heroine shown from knees up, looking toward the man rather than straight into camera.
-Outfit: elegant dark green blouse, tailored trousers, delicate silver earrings.
-Warm evening interior, expressive visual storytelling, tasteful comic-book rendering with realistic faces and hands. No readable text, no logos, no watermark, no speech bubbles.""",
+        "caption": "Семейный VPN · Глава 2. Папа решил, что загадочный ящик — это новый пульт от телевизора.",
+        "prompt": """Create one complete original black-and-white retro manga comic page with EXACTLY THREE horizontal panels stacked vertically. Hand-inked linework, expressive faces, subtle cross-hatching, charming domestic comedy, consistent character design.
+
+The same recurring heroine from the reference image appears in all panels. Preserve her recognizable facial identity and hairstyle, rendered naturally as manga ink art.
+
+STORY:
+Panel 1: Cozy family living room. The heroine stands beside the television and points toward a small network box on the shelf. Her father enters holding a TV remote, looking puzzled.
+Panel 2: The father points the remote at the network box as if trying to change the channel. The heroine turns toward him with a surprised, disbelieving expression.
+Panel 3: The TV remains unchanged; the father proudly presses the remote again while the heroine facepalms. Clear visual punchline.
+
+Heroine outfit: elegant dark green blouse translated into black-and-white tonal shading, tailored trousers, delicate earrings. Different pose and camera angle in each panel. Keep the father visually distinct and consistent.
+Leave speech balloons empty; no readable text, pseudo-letters, captions, logos or watermark. Exactly three clearly separated horizontal panels, vertical comic page.""",
     },
     {
         "title": "Ящик Пандоры — семейный VPN",
-        "caption": "Семейный VPN. Глава 3: мама обнаружила, что интернет теперь работает даже на кухне.",
-        "prompt": """Create a polished, humorous cinematic comic illustration for a Russian family-tech comedy.
-The recurring heroine is the same woman from the reference image. Preserve her recognizable facial identity.
-Scene: bright apartment kitchen in the morning. The heroine is holding a tablet and showing her surprised mother that a video is streaming smoothly; in the background a family member happily uses a laptop. Show the heroine in a lively side-facing pose, gesturing toward the tablet, not standing still for a portrait.
-Outfit: light blue shirt with rolled sleeves, dark high-waisted trousers, understated jewelry.
-Bright natural daylight, warm family atmosphere, clear visual joke, vertical comic-panel composition, expressive but realistic faces. No readable text, logos, watermark, or speech bubbles.""",
+        "caption": "Семейный VPN · Глава 3. Мама обнаружила, что интернет теперь работает даже на кухне.",
+        "prompt": """Create one complete original black-and-white retro manga comic page with EXACTLY THREE horizontal panels stacked vertically. Hand-inked manga artwork, lively expressive faces, clean linework and gentle cross-hatching. Consistent heroine design in all panels.
+
+Use the woman in the reference image as the recurring heroine. Preserve her recognizable facial identity, face shape, eyes, nose, lips and hairstyle, naturally redrawn in manga style.
+
+STORY:
+Panel 1: Bright family kitchen in the morning. The heroine enters holding a tablet and notices her mother watching a video smoothly on another device.
+Panel 2: The heroine demonstrates the connection on her tablet, smiling and gesturing toward the kitchen. Her mother looks amazed.
+Panel 3: The mother happily carries her tablet toward the far corner of the kitchen, while the heroine realizes that the whole family will now expect perfect internet everywhere. Gentle comic punchline.
+
+Heroine outfit: light shirt with rolled sleeves and dark high-waisted trousers, shown with manga tonal shading. Use different natural poses and camera angles across the panels.
+Leave speech balloons empty, no letters or pseudo-text, no captions, no logos, no watermark. Exactly three clear horizontal panels on one vertical comic page.""",
     },
     {
         "title": "Ящик Пандоры — семейный VPN",
-        "caption": "Семейный VPN. Глава 4: младший брат подключил к сети всё, что нашёл в квартире.",
-        "prompt": """Create a polished, humorous cinematic comic illustration for a Russian family-tech comedy.
-Use the exact same recurring heroine from the reference image; preserve her recognizable facial identity.
-Scene: a slightly chaotic living room. The heroine stands beside a small network box while a mischievous younger brother proudly presents an absurd collection of connected household gadgets: tablet, laptop, smart speaker, game controller and a desk lamp. The heroine raises one eyebrow and counts the devices on her fingers. Clear dynamic pose, three-quarter view, full upper body visible.
-Outfit: burgundy casual jacket over a simple black top, dark trousers.
-Playful cinematic lighting, detailed cozy apartment, visual comedy, vertical comic panel. No readable text, no logos, no watermark, no speech bubbles.""",
+        "caption": "Семейный VPN · Глава 4. Младший брат подключил к сети всё, что нашёл в квартире.",
+        "prompt": """Create one complete original black-and-white retro manga comic page with EXACTLY THREE horizontal panels stacked vertically. Original hand-inked manga, expressive comedy, crisp linework, detailed cross-hatching, consistent characters.
+
+The recurring heroine is the same woman shown in the reference image. Preserve her recognizable facial identity and hairstyle, redrawn as a manga character in every panel.
+
+STORY:
+Panel 1: Slightly chaotic family living room. The younger brother proudly shows the heroine a laptop and tablet connected to the home network.
+Panel 2: The brother reveals even more connected objects: a smart speaker, game controller, desk lamp and several other household gadgets. The heroine watches the growing pile with disbelief.
+Panel 3: The heroine counts the devices on her fingers, completely overwhelmed, while the brother innocently holds up one last household object to connect. Strong visual punchline.
+
+Heroine outfit: burgundy casual jacket represented with dark manga shading over a simple top and dark trousers. Change pose and camera framing between panels; no static portrait.
+Leave speech balloons empty, no readable text, pseudo-letters, captions, logos or watermark. Exactly three clearly separated horizontal panels in a vertical comic page.""",
     },
 ]
 

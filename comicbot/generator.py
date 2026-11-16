@@ -39,7 +39,8 @@ def generate_daily_image(settings: Settings, day: date) -> tuple[Path, str]:
         return output, episode["caption"]
 
     print("Подключаемся к Qwen-Image-2.1...")
-    client = Client("Qwen/Qwen-Image-2.1", token=settings.hf_token)
+    # gradio_client 1.14.0 uses hf_token; token is the newer constructor name.
+    client = Client("Qwen/Qwen-Image-2.1", hf_token=settings.hf_token)
 
     prepared = client.predict(
         input_images=[{"image": handle_file(str(settings.hero_reference)), "caption": None}],

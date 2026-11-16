@@ -18,6 +18,10 @@ MOSCOW = ZoneInfo("Europe/Moscow")
 
 def setup_logging(log_dir: Path) -> None:
     log_dir.mkdir(parents=True, exist_ok=True)
+    # httpx/httpcore log full request URLs. Telegram Bot API URLs contain the
+    # bot token, so keep transport request logs above INFO to prevent secret leaks.
+    logging.getLogger("httpx").setLevel(logging.WARNING)
+    logging.getLogger("httpcore").setLevel(logging.WARNING)
     logging.basicConfig(
         level=logging.INFO,
         format="%(asctime)s %(levelname)s %(message)s",

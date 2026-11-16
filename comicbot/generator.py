@@ -39,9 +39,10 @@ def generate_daily_image(settings: Settings, day: date) -> tuple[Path, str]:
         return output, episode["caption"]
 
     print("Подключаемся к Qwen-Image-2.1...")
-    # gradio_client 1.14.0 uses hf_token; token is the newer constructor name.
     client = Client("Qwen/Qwen-Image-2.1", hf_token=settings.hf_token)
 
+    # Upload the identity reference during preparation so the Space can condition
+    # the generation on the real photographed heroine.
     prepared = client.predict(
         input_images=[{"image": handle_file(str(settings.hero_reference)), "caption": None}],
         original_prompt=episode["prompt"],
@@ -64,9 +65,11 @@ def generate_daily_image(settings: Settings, day: date) -> tuple[Path, str]:
         height=1280,
         width=960,
         negative_prompt=(
-            "different woman, changed identity, changed face, distorted face, "
-            "bad anatomy, deformed hands, extra fingers, unreadable text, "
-            "letters, watermark, logo, blurry, low quality"
+            "manga, anime, cartoon, illustration, drawing, hand-drawn, ink sketch, "
+            "line art, cross-hatching, cel shading, painting, 3d render, doll face, "
+            "plastic skin, exaggerated eyes, different woman, changed identity, "
+            "changed face, distorted face, bad anatomy, deformed hands, extra fingers, "
+            "unreadable text, letters, watermark, logo, blurry, low quality"
         ),
         api_name="/generate_request",
     )
